@@ -34,3 +34,19 @@ mvn archetype:generate -DgroupId=bbnhinew -DartifactId=mvnServletManualApp -Dver
 </properties> 
 ```
 * "mvn package" will produce the war, take the war and do hard deployment 
+* for soft deployment add this plugin 
+```
+      <!-- tomcat soft deployment -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <server>tomcat</server>
+          <url>http://localhost:8080/wishServlet</url>
+          <path>/wishServlet</path>
+          <port>8080</port>
+        </configuration>
+      </plugin>
+```
+* run the cmd "mvn tomcat7:run"
