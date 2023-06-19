@@ -21,10 +21,14 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="format_sql">true</property>
-        <mapping class="org.example.Model.Employee"/>
-        <mapping class="org.example.Model.Product"/>
+        <mapping class="org.example.Model.EmployeeDept"/>
+        <mapping class="org.example.Model.Department"/>
+        <mapping class="org.example.Model.Account"/>
+        <mapping class="org.example.Model.Student"/>
+        <mapping class="org.example.Model.Course"/>
+
     </session-factory>
 
 </hibernate-configuration>
