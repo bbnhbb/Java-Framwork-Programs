@@ -5,24 +5,25 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import lombok.*;
 
 @Getter
-@ToString
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
-public class CoronaVaccine implements Serializable {
+public class Customer implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long regNo;
+  private Integer cid;
 
-  private String name;
-  private String company;
-  private String country;
-  private Double price;
-  private Integer requiredDouseCount;
+  private String cname;
+  private String caddress;
+  private LocalDateTime dob;
+  private LocalTime dom;
+  private LocalDate doj;
 }
