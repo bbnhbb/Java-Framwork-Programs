@@ -29,29 +29,29 @@
         }
     ```
 
-  - Use Prototype registry pattern when you want to reduce the no of sub classes that only differ in the way they intialize their respective objects.
-    - somebody could have created these subclasses to be able to create objects with a specific configuration in the registry 
+- Use Prototype registry pattern when you want to reduce the no of sub classes that only differ in the way they intialize their respective objects.
+  - somebody could have created these subclasses to be able to create objects with a specific configuration in the registry 
 
-    ```java
-      Sparrow longLeggedSparrow = new Sparrow();
-        longLeggedSparrow.setLegsSize("hundred");
+  ```java
+    Sparrow longLeggedSparrow = new Sparrow();
+      longLeggedSparrow.setLegsSize("hundred");
 
-        Crow sweetSoundCrow = new Crow();
-        sweetSoundCrow.setSound("kookoo");
+      Crow sweetSoundCrow = new Crow();
+      sweetSoundCrow.setSound("kookoo");
 
-        BirdRegistry birdRegistry = new BirdRegistry();
-        birdRegistry.registerBird("sweetSoundCrow", sweetSoundCrow);
-        birdRegistry.registerBird("longLeggedSparrow", longLeggedSparrow);
+      BirdRegistry birdRegistry = new BirdRegistry();
+      birdRegistry.registerBird("sweetSoundCrow", sweetSoundCrow);
+      birdRegistry.registerBird("longLeggedSparrow", longLeggedSparrow);
 
-        List<String> getBirdOfTypes = List.of(
-                "sweetSoundCrow",
-                "longLeggedSparrow",
-                "sweetSoundCrow"
-        );
+      List<String> getBirdOfTypes = List.of(
+              "sweetSoundCrow",
+              "longLeggedSparrow",
+              "sweetSoundCrow"
+      );
 
-        List<Bird> requestedBirds = new ArrayList<>();
+      List<Bird> requestedBirds = new ArrayList<>();
 
-        for (String type: getBirdOfTypes) {
-            requestedBirds.add(birdRegistry.getBird(type));
-        }
-    ```
+      for (String type: getBirdOfTypes) {
+          requestedBirds.add(birdRegistry.getBird(type));
+      }
+  ```
