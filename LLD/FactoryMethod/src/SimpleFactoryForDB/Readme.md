@@ -1,0 +1,16 @@
+# Simple Factory 
+- here in simple factory 
+  - send email has only code to send the email
+  - Database driver is collected from Database driver factory getDatabaseDriver() 
+    - return type for this method is DatabaseDriver interface
+- Design principles
+  - Follows
+    - Dry - as database can be used anywhere else
+    - SRP 
+  - Not follow
+    - Open Close - always we have to modify databasefactory but not email class
+    - Maintainable
+- Simple factory is usefull if we have minimum classes 
+  - like old and new tax regime 
+  - But in case of databases we have to many of them will not be good to use
+- So we have factory method 
